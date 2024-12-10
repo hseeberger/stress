@@ -1,0 +1,31 @@
+[package]
+name          = "stress"
+version       = "0.0.1"
+edition       = "2021"
+description   = "stress"
+authors       = [ "Heiko Seeberger <git@heikoseeberger.de>" ]
+license-file  = "LICENSE"
+readme        = "README.md"
+homepage      = "https://github.com/hseeberger/stress"
+repository    = "https://github.com/hseeberger/stress"
+documentation = "https://github.com/hseeberger/stress"
+
+[dependencies]
+anyhow                = { version = "1.0" }
+figment               = { version = "0.10", features = [ "env", "yaml" ] }
+opentelemetry         = { version = "0.27" }
+opentelemetry_sdk     = { version = "0.27", features = [ "rt-tokio" ] }
+opentelemetry-otlp    = { version = "0.27", default-features = false, features = [ "grpc-tonic", "trace" ] }
+rand                  = { version = "0.8" }
+serde                 = { version = "1.0", features = [ "derive" ] }
+serde_json            = { version = "1.0" }
+thiserror             = { version = "2.0" }
+time                  = { version = "0.3", features = [ "formatting" ] }
+tokio                 = { version = "1", features = [ "macros", "rt-multi-thread" ] }
+tokio-postgres        = { version = "0.7" }
+tracing               = { version = "0.1" }
+tracing-opentelemetry = { version = "0.28" }
+tracing-subscriber    = { version = "0.3", features = [ "env-filter", "json" ] }
+
+[dev-dependencies]
+assert_matches = { version = "1.5" }

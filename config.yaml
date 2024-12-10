@@ -1,0 +1,5 @@
+telemetry:
+  tracing:
+    enabled: false
+    service_name: "stress"
+    otlp_exporter_endpoint: "http://localhost:4317"
